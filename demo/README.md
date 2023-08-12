@@ -1,5 +1,5 @@
 # Test Page
 
 ```
-npm run test
+npm run dev
 ```
