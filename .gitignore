@@ -4,6 +4,7 @@ node_modules
 !demo/*
 !config/*
 !*config*
+!docs/*
 *.css.ts
 *.map
 *.d.ts
