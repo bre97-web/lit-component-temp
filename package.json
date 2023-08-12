@@ -1,8 +1,8 @@
 {
-  "name": "lit-component-temp",
-  "version": "1.0.0",
-  "description": "template",
-  "author": "bre97-web",
+  "name": "",
+  "version": "0.0.1",
+  "author": "",
+  "description": "",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -12,38 +12,42 @@
     "url": ""
   },
   "homepage": "",
+  "keywords": [],
   "scripts": {
     "build": "wireit",
     "build:ts": "wireit",
     "build:css-to-ts": "wireit",
-    "css": "node css-to-ts.js",
+    "build:demo": "tsc && vite build",
+    "css": "node ./config/css-to-ts.js",
     "ts": "tsc --pretty",
-    "test": "npx web-dev-server --open /demo/ --node-resolve"
+    "publish:npm": "node ./config/publish-to-npm.js && npm run format:json",
+    "publish:gpr": "node ./config/publish-to-gpr.js && npm run format:json",
+    "format:json": "npx prettier --write package.json",
+    "dev": "vite",
+    "test": "exit 0"
   },
   "type": "module",
   "files": [
     "**/*.js",
     "**/*.js.map",
     "**/*.d.ts",
-    "**/*.scss",
+    "!config/**",
+    "!docs/**",
+    "!vite.config.ts",
     "!demo/**",
-    "!css-to-ts.js",
-    "!web-test-runner.config.js",
     "!**/test/**",
-    "!**/testing/**",
     "!**/*_test.*",
-    "!.wireit/**",
-    "!catalog"
+    "!.wireit/**"
   ],
   "dependencies": {
     "lit": "^2.8.0",
     "tslib": "^2.6.1"
   },
   "devDependencies": {
-    "@web/dev-server": "^0.3.0",
-    "express": "^4.18.2",
     "glob": "^10.3.3",
+    "prettier": "^3.0.1",
     "typescript": "^5.1.6",
+    "vite": "^4.4.9",
     "wireit": "^0.10.0"
   },
   "wireit": {
@@ -57,19 +61,19 @@
       "files": [
         "tsconfig.json",
         "**/*.ts",
+        "!config/**",
+        "!**.config.ts",
+        "!**.config.js",
         "!**/*.d.ts",
-        "!**/*.css.ts",
-        "!catalog"
+        "!**/*.css.ts"
       ],
       "output": [
         ".tsbuildinfo",
         "**/*.js",
         "**/*.js.map",
         "**/*.d.ts",
-        "!css-to-ts.js",
-        "!web-test-runner.config.js",
-        "!types/",
-        "!catalog"
+        "!config/",
+        "!types/"
       ],
       "clean": "if-file-deleted"
     },
@@ -79,8 +83,7 @@
         "css-to-ts.js"
       ],
       "output": [
-        "**/*.css.ts",
-        "!catalog"
+        "**/*.css.ts"
       ],
       "clean": "if-file-deleted"
     }

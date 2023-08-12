@@ -22,11 +22,14 @@
     width: 100%;
     height: 100%;
     animation: rotate infinite 5s;
+    transition: all 0.25s;
 }
 .outlined-box:hover::after {
     outline:8px dashed blue;
+    animation: rotate infinite 5s linear;
+}
+.outlined-box:hover {
     scale: 1.25;
-    animation: rotate infinite 2s linear;
 }
 @keyframes rotate {
     from {

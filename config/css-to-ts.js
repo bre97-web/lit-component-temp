@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import {globSync} from 'glob'
+import { globSync } from 'glob'
 
 console.log('Start building: css-to-ts')
 
