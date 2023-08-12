@@ -1,12 +1,12 @@
 node_modules
 *.js
 !*.css
-!demo/*
-!config/*
+!demo/**/*
+!config/**/*
 !*config*
-!docs/*
+!docs/**/*
 *.css.ts
 *.map
 *.d.ts
 !types/*.d.ts
-.wireit/
+.wireit/**/*
